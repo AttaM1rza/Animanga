@@ -2,7 +2,7 @@ import os, json
 from serverCommunication import get_client
 from config import data_path
 from config import ipaddress, username, privKeyfile_windows, DATAPATH_SERVER, base_dir
-from config import windows, termux
+from config import windows, termux, linux
 from serverCommunication import windowsClient, termuxClient
 
 from utils import get_operatingSystem
