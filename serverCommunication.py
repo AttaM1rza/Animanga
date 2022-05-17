@@ -1,13 +1,15 @@
 import os
-from config import windows, linux
+from config import windows, linux, termux
 from config import privKeyfile_windows
 from utils import get_operatingSystem
 
 def get_client(operatingSystem):
-    if operatingSystem==windows:
+    if operatingSystem == windows:
         return windowsClient()
-    elif operatingSystem == linux:
+    elif operatingSystem == linux or operatingSystem == termux:
         return termuxClient()
+    else:
+        raise ValueError("NO CLIENT COULD BE ASSIGNED !")
 
 class termuxClient():
     
