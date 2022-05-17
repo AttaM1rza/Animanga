@@ -1,5 +1,5 @@
 import webbrowser, os, json, queue
-from animanga.utils import get_operatingSystem
+from utils import get_operatingSystem
 from config import data_path
 from config import windows, linux, termux
 
@@ -92,7 +92,9 @@ def main():
 
             #save it
             save_data(file_path=data_path, data=data)
-
+            
+        elif user_input == 0:
+            break
         else: 
             print("Input was invalid!")
             continue
