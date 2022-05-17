@@ -1,4 +1,4 @@
-import os
+import json, os
 
 base_dir = os.path.dirname(__file__)
 
@@ -11,8 +11,10 @@ DATAPATH_SERVER = "/home/atta/animanga/data.json"
 
 
 # VARIABLES
-ipaddress = "140.82.36.17"
-username = "root"
+with open(os.path.join(base_dir, "serverAccess.json")) as file:
+    serverCreds = json.load(file)
+ipaddress = serverCreds["ipAddress"]
+username = serverCreds["username"]
 privKeyfile_windows = "id_rsa_vultrPriv"
 
 #FOLDERS
