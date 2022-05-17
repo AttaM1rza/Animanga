@@ -1,12 +1,11 @@
-from curses import window
 import webbrowser, os
 from config import windows, linux, termux
 
 def get_browserClient(operatingSys):
     if operatingSys == windows:
-        return Browser_windows
+        return Browser_windows()
     elif operatingSys == termux:
-        return termux
+        return Browser_termux()
     elif operatingSys == linux:
         raise ValueError("NOT IMPLEMENTED YET")
     raise ValueError("COULD NOT FIND BROWSER !")
