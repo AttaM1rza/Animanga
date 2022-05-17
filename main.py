@@ -1,10 +1,11 @@
 import webbrowser, os, json, queue
+from animanga.utils import get_operatingSystem
 from config import data_path
 from config import windows, linux, termux
 
 from userInterface import add_newAnime, show_allAnimes, display_menu, watchMODE, display_disclaimer
 from dataManager import load_data, save_data, gen_episodeUrls
-from browser import Browser
+from browser import get_browserClient
 
 """
 README: 
@@ -39,7 +40,8 @@ def main():
     display_disclaimer()
     #load complete data
     data = load_data(data_path)
-    Br = Browser() #initialize
+    operatingSys = get_operatingSystem()
+    Br = get_browserClient(operatingSys)
 
     keepMenu = True
     while(keepMenu):
