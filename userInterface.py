@@ -37,6 +37,8 @@ def display_menu():
     WHAT DO YOU WANT TO DO ?
     + [1] watch anime!
     + [2] add a new anime
+
+    + [0] exit
     """)    
 
 def show_allAnimes(animes:dict):
