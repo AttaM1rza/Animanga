@@ -1,15 +1,10 @@
 
-def add_newAnime():
-    url = r"https://animixplay.to/v1/86-part-2-dub/ep3" #DELETE
-    name = "eighty-six"
-    #type = "anime"
-    pageIdentifier = "ep3"
-    episodesInTotal = int("10")
+def add_newAnime(watchUrl:str, title:str, pageIdentifier:str, episodesInTotal:int):
 
     return {
-        name : {
+        title : {
             "type" : None,
-            "originalUrl" : url,
+            "originalUrl" : watchUrl,
             "pageIdentifier" : pageIdentifier,
             "episodeUrls" : [], #[{url1:False, url2:False,...}]
             "totalEpisodes" : episodesInTotal,
