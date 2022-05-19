@@ -1,3 +1,4 @@
+from mmap import PAGESIZE
 import webbrowser, os, json, queue
 from utils import get_operatingSystem
 from config import data_path
@@ -77,7 +78,11 @@ def main():
 
         elif user_input ==2:
             #add new Entry
-            newEntry = add_newAnime()
+            url = input("ENTER THE URL, TO WATCH THE ANIME: ")
+            title = input("ENTER THE TITLE OF THE ANIME: ")
+            pageIdentifier = input("ENTER THE PAGE-IDENTIFIER WHICH IS WITHIN THE URL \n (meaning the substring in the url wich is used to navigate through the espisodes): ")
+            episodesInTotal = input("ENTER THE AMOUNT OF THE EPISODES: ")
+            newEntry = add_newAnime(url, title, pageIdentifier, int(episodesInTotal))
             #TODO: get urls for every episode and add to dict
 
             newEntry_key = list(newEntry.keys())[0]
