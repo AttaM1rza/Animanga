@@ -8,6 +8,7 @@ windows = "WINDOWS"
 linux = "LINUX"
 termux = "TERMUX"
 DATAPATH_SERVER = "/home/atta/animanga/data.json"
+WAIT_INTERNETERROR = 4.5
 
 
 # VARIABLES

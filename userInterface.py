@@ -27,14 +27,14 @@ def display_disclaimer():
     """
     )
 
-def display_menu():
-    print("""    
-    WHAT DO YOU WANT TO DO ?
-    + [1] watch anime!
-    + [2] add a new anime
+# def display_menu():
+#     print("""    
+#     WHAT DO YOU WANT TO DO ?
+#     + [1] watch anime!
+#     + [2] add a new anime
 
-    + [0] exit
-    """)    
+#     + [0] exit
+#     """)    
 
 def show_allAnimes(animes:dict):
     for i, name in enumerate(animes.keys()):
@@ -43,7 +43,7 @@ def show_allAnimes(animes:dict):
 def watchMODE():
     print("\n")
     print("   DID YOU FINISHED WATCHING THIS EPISODE ?")
-    print("   [1] YES & CONTINUE   [2] GO BACK TO MENUE   [0] NO")
+    print("   [1] YES & CONTINUE   [2] yes & GO BACK   [0] no & GO BACK")
     watched = int(input(">> "))  
     if watched == 1:
         return 1
