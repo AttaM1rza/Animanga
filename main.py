@@ -1,6 +1,6 @@
 from mmap import PAGESIZE
 import webbrowser, os, json, queue
-from utils import get_operatingSystem
+from utils import get_operatingSystem, internet_is_active
 from config import data_path
 from config import windows, linux, termux
 
@@ -38,6 +38,8 @@ def select_episode(anime):
 
 
 def main():
+    while not internet_is_active(5):
+        print("trying to connect with internet...")
     display_disclaimer()
     #load complete data
     data = load_data(data_path)
@@ -69,6 +71,8 @@ def main():
                 watchResult = watchMODE()
                 if watchResult==1:
                     data[animename]["episodeUrls"][episodeUrl] = 1 #mark it as WATCHED
+                    while not internet_is_active(5):
+                        print("trying to connect with internet...")
                     save_data(data_path, data)
                 # if watchResult==:
                 #     #continue watching
@@ -96,6 +100,8 @@ def main():
             )
 
             #save it
+            while not internet_is_active(5):
+                print("trying to connect with internet...")
             save_data(file_path=data_path, data=data)
             
         elif user_input == 0:
