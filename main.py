@@ -43,8 +43,8 @@ def add_newAnime_logic(data):
             )
 
             #save it
-            while not internet_is_active(WAIT_INTERNETERROR):
-                print("trying to connect with internet...")
+            while not internet_is_active():
+                continue
             save_data(file_path=data_path, data=data)
 
 def select_episode(anime):
@@ -65,8 +65,8 @@ def select_episode(anime):
 def main():
 
     display_disclaimer()
-    while not internet_is_active(WAIT_INTERNETERROR):
-        print("trying to connect with internet...")
+    while not internet_is_active():
+        continue
     #load complete data
     data = load_data(data_path)
     operatingSys = get_operatingSystem()
@@ -108,8 +108,8 @@ def main():
                 watchResult = watchMODE()
                 if watchResult==1 or watchResult==2:
                     data[animename]["episodeUrls"][episodeUrl] = 1 #mark it as WATCHED
-                    while not internet_is_active(WAIT_INTERNETERROR):
-                        print("trying to connect with internet...")
+                    while not internet_is_active():
+                        continue
                     save_data(data_path, data)
                     if watchResult==2:
                         keepWatching = False
