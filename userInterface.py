@@ -44,10 +44,9 @@ def watchMODE():
     print("\n")
     print("   DID YOU FINISHED WATCHING THIS EPISODE ?")
     print("   [1] YES & CONTINUE   [2] yes & GO BACK   [0] no & GO BACK")
-    watched = int(input(">> "))  
-    if watched == 1:
-        return 1
-    else: # it doesnt matter if 2 or 0 is selected, it always goes back to the menu
-        return 2
+    answer = int(input(">> "))  
+    if answer == 1:return 1
+    if answer == 2:return 2
+    if answer == 0:return 0
 
     #TODO: if watchlist completed set watched to True
