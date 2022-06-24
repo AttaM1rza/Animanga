@@ -82,6 +82,7 @@ def main():
         show_allAnimes(data)
         print("")
         print("ENTER [0] to add a new Anime")
+        print("ENTER [d] to delete a new Anime")
         print("or")
         print("ENTER [n] index number from above to watch")
         user_input=None
@@ -89,6 +90,12 @@ def main():
             user_input = input("\n>>> ")
         user_choice = int(user_input)
         if user_choice == -1: break
+        if user_choice == 'd':
+            animeName = input("enter NAME of anime, to delete it from the menu list: ")
+            if animeName in data:
+                del data[animeName]
+            else:
+                print("ERROR: THE TYPED ANIME NAME DOESNT EXISTS!")
         elif user_choice == 0:
             add_newAnime_logic(data)
         elif not (1 <= user_choice and user_choice < len(list(data))):
