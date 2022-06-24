@@ -82,7 +82,7 @@ def main():
         show_allAnimes(data)
         print("")
         print("ENTER [0] to add a new Anime")
-        print("ENTER [d] to delete a new Anime")
+        print("ENTER [9] to delete a new Anime")
         print("or")
         print("ENTER [n] index number from above to watch")
         user_choice=None
