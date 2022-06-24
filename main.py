@@ -85,15 +85,16 @@ def main():
         print("ENTER [d] to delete a new Anime")
         print("or")
         print("ENTER [n] index number from above to watch")
-        user_input=None
-        while((user_input==None) or (user_input=='')):
-            user_input = input("\n>>> ")
-        user_choice = int(user_input)
+        user_choice=None
+        while((user_choice==None) or (user_choice=='')):
+            user_choice = int(input("\n>>> "))
         if user_choice == -1: break
-        if user_choice == 'd':
+        elif user_choice == 9:
             animeName = input("enter NAME of anime, to delete it from the menu list: ")
             if animeName in data:
                 del data[animeName]
+                save_data(data_path, data)
+                print("DELETED ...")
             else:
                 print("ERROR: THE TYPED ANIME NAME DOESNT EXISTS!")
         elif user_choice == 0:
@@ -103,7 +104,6 @@ def main():
             continue
         else:
             animename = list(data)[user_choice]
-
             keepWatching = True
             while(keepWatching):
                 episodeUrl = select_episode(data[animename])
