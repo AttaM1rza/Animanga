@@ -22,7 +22,7 @@ newData = {
 
 """
 
-def gen_episodeUrls(episodeUrl, pageIdentifier, MAX_EPISODES):
+def gen_episodeUrls(episodeUrl, pageIdentifier, MAX_EPISODES, watchedEpisodes):
     #identifying page within pageIdentifier
     #AXIOM 1: only collective numbers are possinle within the complete pageIdentifier
     episodeNr = ""
@@ -30,10 +30,13 @@ def gen_episodeUrls(episodeUrl, pageIdentifier, MAX_EPISODES):
         if char.isdigit():
             episodeNr += char
     urls = {}
-    for i in range(1, MAX_EPISODES+1):
+    for i in range(1, MAX_EPISODES+1): #correc +1, cause range, goes only to max-1
         new_pageIdent = pageIdentifier.replace(episodeNr, str(i)) 
         new_url = episodeUrl.replace(pageIdentifier, new_pageIdent)
-        urls[new_url] = 0
+        if i <= watchedEpisodes:
+            urls[new_url] = 1
+        else:
+            urls[new_url] = 0
     return urls
 
 def save_data(file_path, data:dict):
