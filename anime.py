@@ -34,14 +34,14 @@ class Anime():
             "watched" : self.__watched
         }
 
-anime = Anime(
-    title = None ,
-    type = None,
-    url = None,
-    pageIdentifier = None,
-    episodeUrls = [], #[{url1:False, url2:False,...}]
-    totalEpisodes = 10,
-    watched = True
-)
+# anime = Anime(
+#     title = None ,
+#     type = None,
+#     url = None,
+#     pageIdentifier = None,
+#     episodeUrls = [], #[{url1:False, url2:False,...}]
+#     totalEpisodes = 10,
+#     watched = True
+# )
 
-print(anime.get_dataAsDict())
+# print(anime.get_dataAsDict())
