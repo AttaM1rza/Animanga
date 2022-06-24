@@ -28,7 +28,8 @@ def add_newAnime_logic(data):
             url = input("ENTER THE URL, TO WATCH THE ANIME: ")
             title = input("ENTER THE TITLE OF THE ANIME: ")
             pageIdentifier = input("ENTER THE PAGE-IDENTIFIER WHICH IS WITHIN THE URL \n (meaning the substring in the url wich is used to navigate through the espisodes): ")
-            episodesInTotal = input("ENTER THE AMOUNT OF THE EPISODES: ")
+            episodesInTotal = int(input("ENTER THE AMOUNT OF THE EPISODES: "))
+            episodesWatched = int(input("enter how many episodes are already WATCHED: "))
             newEntry = add_newAnime(url, title, pageIdentifier, int(episodesInTotal))
             #TODO: get urls for every episode and add to dict
 
@@ -39,7 +40,8 @@ def add_newAnime_logic(data):
             data[newEntry_key]["episodeUrls"] = gen_episodeUrls(
                 data[newEntry_key]["originalUrl"], 
                 data[newEntry_key]["pageIdentifier"],
-                data[newEntry_key]["totalEpisodes"]
+                data[newEntry_key]["totalEpisodes"],
+                episodesWatched
             )
 
             #save it
