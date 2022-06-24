@@ -6,7 +6,7 @@ from config import windows, linux, termux
 import time 
 
 from userInterface import add_newAnime, show_allAnimes, watchMODE, display_disclaimer
-from dataManager import load_data, save_data, gen_episodeUrls
+from dataHandler import load_data, save_data, gen_episodeUrls
 from browser import get_browserClient
 
 """
