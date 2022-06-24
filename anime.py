@@ -12,14 +12,16 @@ class Anime():
     __episodeUrls = [] #[{url1:False, url2:False,...}]
     __totalEpisodes = None
     __watched = None
+    __totalWatchedEpisodes = None
 
-    def __init__(self, title:str, type:Type, url:str, pageIdentifier:str, episodeUrls:str, totalEpisodes:int, watched:bool):
+    def __init__(self, title:str, type:Type, url:str, pageIdentifier:str, episodeUrls:str, totalEpisodes:int, totalWatchedEpisodes:int, watched:bool):
         self.__title = title 
         self.__type = type
         self.__url = url
         self.__pageIdentifier = pageIdentifier
         self.__episodeUrls = episodeUrls
         self.__totalEpisodes = totalEpisodes
+        self.__totalWatchedEpisodes = totalWatchedEpisodes
         self.__watched = watched
         #TODO: raise error (here) if any of the are none 
 
@@ -31,6 +33,7 @@ class Anime():
             "pageIdentifier" : self.__pageIdentifier,
             "episodeUrls" : self.__episodeUrls,
             "totalEpisodes" : self.__totalEpisodes,
+            "__totalWatchedEpisodes" : self.__totalWatchedEpisodes,
             "watched" : self.__watched
         }
 

@@ -1,16 +1,31 @@
-
+from anime import Anime
 def add_newAnime(watchUrl:str, title:str, pageIdentifier:str, episodesInTotal:int):
 
-    return {
-        title : {
-            "type" : None,
-            "originalUrl" : watchUrl,
-            "pageIdentifier" : pageIdentifier,
-            "episodeUrls" : [], #[{url1:False, url2:False,...}]
-            "totalEpisodes" : episodesInTotal,
-            "watched" : None
-        }
-    }
+    #{
+    #     title : {
+    #         "type" : None,
+    #         "originalUrl" : watchUrl,
+    #         "pageIdentifier" : pageIdentifier,
+    #         "episodeUrls" : [], #[{url1:False, url2:False,...}]
+    #         "totalEpisodes" : episodesInTotal,
+    #         "watched" : None
+    #     }
+    # }
+    return None 
+
+def get_userInp_addAnime():
+    url = input("ENTER THE URL, TO WATCH THE ANIME: ")
+    title = input("ENTER THE TITLE OF THE ANIME: ")
+    pageIdentifier = input("ENTER THE PAGE-IDENTIFIER WHICH IS WITHIN THE URL \n (meaning the substring in the url wich is used to navigate through the espisodes): ")
+    episodesInTotal = int(input("ENTER THE AMOUNT OF THE EPISODES: "))
+    episodesWatched = int(input("enter how many episodes are already WATCHED (0,1,2...): "))
+    
+    newAnime = Anime(title=title, type=None, url = watchUrl,
+    pageIdentifier=pageIdentifier, episodeUrls=[], #[{url1:False, url2:False,...}]
+    totalEpisodes=episodesInTotal, totalWatchedEpisodes=episodesWatched,
+    watched=False
+    )
+    return newAnime
 
 def display_disclaimer():
     print(
